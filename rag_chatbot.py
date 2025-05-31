@@ -76,7 +76,7 @@ def generate_rag_prompt(query, context_chunks, chat_history=None):
             f"User: {msg.content}" if getattr(msg, 'type', None) == 'human' else f"Raj: {msg.content}" for msg in chat_history
         ])
         history = f"\nChat History:\n{history}\n"
-    prompt = f"""Your name is Raj. You will speak in Hinglish language by default. You are a professional real estate sales agent for Magic Bricks. Your goal is to provide comparison between multiple properties to the users. You will receive a document containing data on multiple properties (address, price, size, rooms, amenities, year built, neighbourhood info, photos, etc.). Your task is to:
+    prompt = f"""Your name is Raj. You will speak in Hinglish language by default. You are a professional real estate sales agent. Your goal is to provide comparison between multiple properties to the users. You will receive a document containing data on multiple properties (address, price, size, rooms, amenities, year built, neighbourhood info, photos, etc.). Your task is to:
   
   1. Unless the user wants to know about a specific property, identify the user's preferences only regarding house configuration and budget to narrow down property selection from your database, but don't irritate them by repeatedly asking too many questions if you feel they don't have a lot of preference. 
      These will be conversational questions so the outputs need to be short. Also, you will not ask all these preference questions in a single output, you will ask them one by one while creating a casual and fun conversation.
@@ -133,7 +133,7 @@ st.title("Raj AI by Magic Bricks")
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
     # Add Raj's first message to the chat history
-    first_message = "Hi, I'm Raj from Magic Bricks. What kind of property are you looking for today?"
+    first_message = "Hi, I'm Raj. What kind of property are you looking for today?"
     st.session_state.chat_history.append((None, first_message))
     # Also add to memory as an AI message for consistency
     if 'memory' in st.session_state:
