@@ -1,4 +1,4 @@
-RealEstate-Chat (Raj AI by Magic Bricks)
+RealEstate-Chat (Raj AI)
 
 Overview
 
@@ -8,7 +8,7 @@ Features
 
 - **Conversational Chatbot**: "Raj" interacts in Hinglish, collects user preferences, and provides concise, property-specific answers.
 - **Property Comparison**: Lists and compares multiple properties based on user preferences (budget, BHK, amenities, etc.).
-- **Data Pipeline**: Scrapes property details from MagicBricks, structures them, and feeds them to the chatbot.
+- **Data Pipeline**: Scrapes property details, structures them, and feeds them to the chatbot.
 - **Rich Responses**: Includes property images, links, and essential details in chat responses.
 - **Extensible**: Easily add new property URLs and re-scrape data.
 
@@ -31,7 +31,7 @@ How It Works
 
 1. Data Collection
 
-- **urls.txt**: Add or update property URLs here. Each line should have a property name and its MagicBricks URL.
+- **urls.txt**: Add or update property URLs here. Each line should have a property name and its URL.
 - **scrape_urls.py**: Run this script to scrape property details (title, price, amenities, images, etc.) from the URLs in `urls.txt`. The results are saved in `output.txt`.
 
 2. Chatbot Application
